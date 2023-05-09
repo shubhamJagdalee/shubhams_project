@@ -25,6 +25,7 @@ import { RoutingComponent } from './routing/routing.component';
 import { Comp1Component } from './intercomponent commun/comp1/comp1.component';
 import { Comp2Component } from './intercomponent commun/comp2/comp2.component';
 import { ThirdPartyComponent } from './third-party/third-party.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ThirdPartyComponent } from './third-party/third-party.component';
          RoutingComponent,
          Comp1Component,
          Comp2Component,
-         ThirdPartyComponent
+         ThirdPartyComponent,
+         HomeComponent
   ],
   imports: [
     BrowserModule,
