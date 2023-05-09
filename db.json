@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 28,
+      "fname": "shubh",
+      "lname": "Jagdale"
+    },
+    {
+      "fname": "suraj",
+      "lname": "Jagdale",
+      "id": 29
+    },
+    {
+      "fname": "shivam",
+      "lname": "Jagdale",
+      "id": 30
+    },
+    {
+      "id": 31,
+      "fname": "shubhangiiiiii",
+      "lname": "Jagdale"
+    },
+    {
+      "fname": "shubhda",
+      "lname": "Jagdale",
+      "id": 32
+    },
+    {
+      "fname": "shubham",
+      "lname": "Jagdale",
+      "id": 33
+    }
+  ]
+}

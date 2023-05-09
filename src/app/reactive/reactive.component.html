@@ -1,0 +1,62 @@
+<br><br><h1 style="margin-left: 17cm;">Reactive form</h1>
+
+<div class="container" style="width: 20cm; background-color: rgb(139, 239, 254);">
+    <form [formGroup]="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+        <label for="name" class="form-label">Name - </label>
+        <input type="text" class="form-control" formControlName="name2" 
+        [ngClass]="{'is-invalid': submitted && ngForm.controls.errors}" required >
+
+        <div *ngIf="ngForm.controls.name2.touched" >
+            <div *ngIf="ngForm.controls.name2.errors?.required">this is required</div>
+
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <label for="uname" class="form-label">Username</label>
+            <input type="text" class="form-control" name="uname" formControlName="uname"
+            [ngClass]="{'is-invalid':submitted && ngForm.controls.uname.errors}" required>
+    
+            <div *ngIf="ngForm.controls.uname.touched" class="invalid-feedback">
+                <div *ngIf="ngForm.controls.uname.errors?.required">
+                    This field is required
+                </div>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label"> Cource - </label>
+        <select  class="form-control" formControlName="cource">
+            <option *ngFor="let cs of cources" >{{cs}}</option>
+        </select>
+
+    </div>
+     <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+     <button type="reset" class="btn btn-danger">Reset</button>
+     <button (click)="onMainUpdate()" class="btn btn-warning">Update</button>
+
+    </form>
+
+   <table class="table table-primary">
+
+    <tr>
+        <th>Name</th>
+        <th>Cource</th>
+    </tr>
+
+    <tr *ngFor="let dt of ">
+        <td></td>
+        <td></td>
+
+        <td>
+            <button (click)="onDelete()" class="btn btn-danger">Delete</button>
+            <button (click)="onSideUpdate()" class="btn btn-warning">Update</button>
+        </td>
+    </tr>
+    
+   </table>
+
+</div>

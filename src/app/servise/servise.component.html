@@ -1,0 +1,22 @@
+<h1 style="margin-left: 11cm;">CRUD with data from Backend</h1>
+
+<table class="table table-primary">
+
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Image</th>
+    </tr>
+    <tr *ngFor="let dt of allData1">
+        <td>{{dt.first_name}}</td>
+        <td>{{dt.last_name}}</td>
+        <td>{{dt.email}}</td>
+        <td><img src="{{dt.avatar}}" alt=""></td>
+
+       
+    </tr>
+ 
+
+
+</table>

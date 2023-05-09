@@ -1,0 +1,59 @@
+<br><br>
+<h2 style="margin-left: 17cm;">Template form</h2>
+<div class="container" style="width: 20cm; background-color: rgb(139, 239, 254);">
+
+    <form name="form" #ng="ngForm" (ngSubmit)="ng.form.valid && onSubmit(ng)">
+
+        <div class="form-group">
+         <input type="hidden" name="id" class="form-control" #id="ngModel" ngModel 
+         [(ngModel)]="idd">
+        </div>
+
+        <!-- name1-lable name, name2- input name , name3- for validations -->
+        
+        <div class="form-group">
+         <label for="name1" class="form-label">Name</label> <span style="color: brown;">* </span> -
+         <input type="text" class="form-control" name="name2" #name3="ngModel" ngModel
+         required minlength="2" [ngClass]="{'is-invalid':ng.submitted && name3.invalid}"
+         [(ngModel)]="nm">
+        </div>
+
+        <div *ngIf="ng.submitted && name3.invalid"    >
+             <div *ngIf="name3.errors?.['required']" >Reqiured</div>
+             <div *ngIf="name3.errors?.['minlength']">min 2 letter required</div>
+        </div>
+
+<br>
+      <div class="form-group">
+        <label for="radio">Gender- </label>
+        <input type="radio" class="radio" name="gender" value="male" #male="ngModel" ngModel [(ngModel)]="gd" style="margin-left: 2cm;">
+        <label for="male">male</label>
+        <input type="radio" class="radio" name="gender" value="female" #female="ngModel" ngModel [(ngModel)]="gd" style="margin-left: 2cm;">
+        <label for="female">female</label>
+      </div>
+
+
+<br>
+        <button type="submit"  class="btn btn-success">Submit</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+        <button (click)="onMainUpdate(ng)" class="btn btn-warning">Update</button>
+<br>
+        <table class="table table-primary" *ngIf="showFlag"  >
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+            </tr>
+            <tr *ngFor="let dt of allData">
+        
+                <td>{{dt.name2 | form:dt.gender }} </td>
+                <td>{{dt.gender}}</td>
+
+                <td>
+                    <button (click)="onDelete(dt)" class="btn btn-danger">Delete</button>
+                    <button (click)="onSideUpdate(dt)" class="btn btn-warning" style="margin-left: 2cm;">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+  
+    <!-- form used in dt.name2 is a name of custom pipe -->

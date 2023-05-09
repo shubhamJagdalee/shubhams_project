@@ -1,0 +1,56 @@
+
+<h1 style="margin-left: 15cm;">CRUD with local Data</h1>
+
+<div class="container" style="width: 17cm;">
+
+    <form  name="sj" #frm="ngForm" (ngSubmit)="SubmitForm(frm)" >
+    
+        <div class="form-group">
+            <input type="hidden" class="form-control" name="id" #id="ngModel" ngModel
+             [(ngModel)]="idd">
+        </div>
+    
+        <div class="form-group" >
+            <label for="fname" class="form-label">name</label>
+            <input type="text" class="form-control" name="fname" #fname="ngModel" ngModel
+            [(ngModel)]="fn">
+        </div>
+    
+        <div class="form-group" >
+            <label for="lname" class="form-label">lame</label>
+            <input type="text" class="form-control" name="lname" #lname="ngModel" ngModel
+            [(ngModel)]="ln">
+               
+        </div>
+        <br>
+        
+       <button type="submit"  class="btn btn-info t-2" id="formButtons" >Submit</button>
+       <button  type="button" (click)="onMainUpdate(frm)" class=" btn btn-info t-2" id="formButtons" >Update</button>
+       <button type="reset" class=" btn btn-info" id="formButtons" >reset</button>
+    
+    <br><br> 
+    
+ </form>
+      
+
+<table class="table table-primary">
+    <tr>
+        <th>fist name</th>
+        <th>last name</th>
+         <!-- <th>Action</th>
+        <th>Action</th>  -->
+    </tr>
+
+    <tr  *ngFor="let data of allData" >
+        <td>{{data.fname}}</td>
+        <td>{{data.lname}}</td>
+    <td>
+        <button class="btn btn-danger" (click)="onDelete(data)">Delete</button>
+    </td>
+    
+    <td>
+        <button class="btn btn-warning" (click)="onSideUpdate(data)">update</button>
+    </td> 
+</tr>
+</table>
+</div> 

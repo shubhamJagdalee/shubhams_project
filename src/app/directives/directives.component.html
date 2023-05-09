@@ -1,0 +1,67 @@
+
+<div class="container">
+
+    <!-- Sructural -->
+ <!-- *ngIf -->
+<h4 *ngIf="(flag && age>10)">{{name}}</h4>
+<h4 *ngIf="!(flag && age>18)">{{name}}</h4>
+
+
+<!-- *ngFor -->
+<h6 *ngFor="let dist of district">{{dist}} </h6>
+
+<table class="table table-primary">
+    <tr>
+        <th *ngFor="let dist of district">{{dist}}</th>
+    </tr>
+</table>
+
+<select >
+    <option *ngFor="let dist of district" >{{dist}}</option>  
+</select>
+
+<br><br>
+<!-- *ngSwitch -->
+
+<div [ngSwitch]="color">
+    <h3 *ngSwitchCase="'red'">unsuccesfull</h3>
+     <h3 *ngSwitchCase="'green'">Successfull</h3>
+     <h3 *ngSwitchDefault="">Default</h3>
+</div>
+
+
+<!--   attribute directive -->
+
+<!-- ngClass -->
+ 
+<div>
+    <h3 [ngClass]="'test1'">normal  </h3 >
+    <h3 [ngClass]="testClass1">using ng class </h3 >
+    <!-- condition in ts -->
+    <h3 [ngClass]="testClass2">using ng class condition </h3> 
+    <!-- condition in html -->
+    <h3 [ngClass]="(showFlag) ? 'test2':'test3'">using ng class and ternory operator</h3 >
+    
+</div>
+
+<!-- ngStyle -->
+
+<div>
+    <h3  style="color:blueviolet">normal</h3>
+    <h3  [ngStyle]="{'color':'orange'}"> using ng style </h3 >
+    <!-- condition in ts -->
+    <h3  [ngStyle]="style3">using ng style</h3 >
+    <!-- condition in html -->
+    <h3  [ngStyle]="(showFlag) ? style1:style2">using ng class and ternory operator</h3>
+
+</div>
+
+<!-- component directive -->
+
+<h1 appCustomDirective >custom directive </h1>
+
+</div>
+
+
+
+

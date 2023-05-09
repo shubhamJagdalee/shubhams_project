@@ -1,0 +1,52 @@
+<div class=" container">  <h4>
+  
+ 
+{{ value | customPipe}}
+<br>
+{{4 | customPipe}}
+<br>
+{{value | customPipe:4}}
+<br>
+
+{{text | lowercase}}
+{{text | uppercase}}
+{{text | titlecase }}
+{{text | slice:2}}
+{{text | slice:2:4}}
+
+
+
+
+<br>
+{{ birthday | date }}
+<br>
+{{ birthday | date | uppercase}}
+<br>
+{{birthday  | date:'short'}}
+<br>
+{{birthday  | date:'long'}}
+
+<br>
+{{ date }}
+<br>
+{{ date | date:'short'}}
+<br>
+{{ date | date:'full' }}
+<br>
+{{ date | date:'dd/yyyy/mm' }}
+<br>
+{{ date | date:'EEEE'}}
+<br>
+{{ date | date:'MMMM'}}
+<br>
+
+
+{{name | json}}
+<br>
+{{value | currency}}
+{{value | currency:'INR' }}
+{{value | currency:'UNR' }}
+{{value | currency:'SHU':'code' }}
+</h4></div>
+
+
